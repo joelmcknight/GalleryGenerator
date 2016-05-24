@@ -1,0 +1,396 @@
+@import "_setup.scss";
+
+$mainColor:#333;
+$accentColor:rgb(0,162,186);
+$lightGrey:#ccc;
+
+
+h1 {
+	font-family: 'Unica One', cursive;
+	text-transform: uppercase;
+	font-size: 6rem;
+	letter-spacing: 1rem;
+	margin:0;
+	padding:0;
+}
+
+h2 {
+	font-size: 2.4rem;
+}
+
+h3 {
+	font-family: 'Unica One', cursive;
+	text-transform: uppercase;
+	font-size: 2rem;
+}
+
+// GENERAL STYLING
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background:$lightGrey;
+	font-family: 'Vollkorn', serif;
+	font-size: 1.4rem;
+	color:$mainColor;
+
+	a {
+		outline: none;
+		text-decoration: none;
+		color:white;
+		transition:color 0.3s;
+		&:hover{
+			color:$accentColor;
+		}
+	}
+}
+
+header {
+	width: 100%;
+	padding: 0 50px;
+	height: 80vh;
+	background: linear-gradient(rgba(0,162,186,0.8),rgba(0,162,186,0.8)), url("../images/sayagata-400px/sayagata-400px.png");
+	color: white;
+	text-align: center;
+	
+	display:flex;
+	flex-flow:column wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper {
+	margin:0 auto;
+	padding:0 50px 25px 25px;
+	width:80%;
+	background:white;
+	box-shadow: 2px 2px 5px rgba(51,51,51,0.8);
+}
+
+button {
+	outline: none;
+	background:none;
+	border:1px solid $mainColor;
+	margin:0 auto;
+	padding:10px;
+	font-family: 'Unica One', cursive;
+	text-transform: uppercase;
+	color:$mainColor;
+	transition: background, color, 0.3s;
+	&:hover {
+		background:$mainColor;
+		color:white;
+	}
+	.fa {
+		font-size: 3rem;
+	}
+}
+
+// SECTION: Examples
+
+section.examples {
+	position: relative;
+	top: -100px;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content:space-between;
+	align-items: center;
+
+	.grid-sample {
+		width:40%;
+		margin-right: 25px;
+		padding: 10px;
+		img {
+			display: block;
+			max-width: 100%;
+		}
+	}
+
+	.grid-description {
+		width:calc((100% - 40%) - 25px);
+		margin-top: 25px;
+
+		code.sample {
+			display: block;
+			overflow: scroll;
+			width: 100%;
+			height: 250px;
+			padding:0px 25px;
+			margin-bottom: 25px;
+			border:1px solid $mainColor;
+			background:$mainColor;
+			color:white;
+
+			.xmp {
+				font-size: 1.4rem;
+			}
+		
+
+		}
+	}
+}
+
+button.demonstrate,
+button.copy-code {
+	margin:0 5px 5px 0px;
+}
+
+.previous {
+	background:none;
+	padding:10px;
+	border:none;
+	position:absolute;
+	top:calc(50% - 25px);
+	left:-50px;
+
+}
+
+.next {
+	background:none;
+	border:none;
+	padding:10px;
+	position:absolute;
+	top:calc(50% - 25px);
+	right:-50px;
+}
+
+.demonstration.show-gallery {
+	display:block;
+}
+
+// GALLERIES
+
+section.demonstration {
+	display: none;
+	margin: 0 auto;
+	width: 80%;
+	max-width: 900px;
+}
+
+.gallery {
+	width:100%;
+	height:auto;
+	background:$mainColor;
+	margin-bottom: 50px;
+	padding:25px;
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.images-preset {
+	background:url("http://unsplash.it/1000/1000/?random");
+	background-size: cover;
+	background-position: center;
+	border:1px solid white;
+	float: left;
+}
+
+.gallery1 {
+	@extend .gallery;
+
+	.images {
+		@extend .images-preset;
+		width:calc(100% / 3);
+		height:250px;
+	}
+}
+
+.gallery2 {
+	@extend .gallery;
+
+	.images {
+		@extend .images-preset;
+		width:calc(100% / 2);
+		height:250px;
+	}
+
+	.image1 {
+		width:100%;
+		height:400px;
+	}
+}
+
+.gallery3 {
+	@extend .gallery;
+
+	.images {
+		@extend .images-preset;
+		width:calc(100% / 4);
+		height:200px;
+	}
+
+	.image1 {
+		width:100%;
+		height:400px;
+	}
+}
+
+.gallery4 {
+	@extend .gallery;
+
+	.images {
+		@extend .images-preset;
+		width:calc(100% / 3);
+		height:250px;
+	}
+
+	.image1 {
+		width:100%;
+	}
+
+	.image2 {
+		width:(100% - (100% / 3));
+	}
+
+	.image4,
+	.image5 {
+		width:(100% / 2);
+	}
+
+	.image6,
+	.image7,
+	.image8,
+	.image9 {
+		width:calc(100% / 4);
+		height:200px;
+	}
+}
+
+.gallery5 {
+	@extend .gallery;
+
+	.images {
+		@extend .images-preset;
+		width:calc(100% / 3);
+		height:250px;
+	}
+
+	.image1 {
+		width:calc(100% - (100% / 3));
+		height: 500px;
+	}
+}
+
+.gallery6 {
+	@extend .gallery;
+
+	.images {
+		@extend .images-preset;
+		width:calc(100% / 3);
+		height:250px;
+	}
+
+	.image1,
+	.image6 {
+		width:calc(100% - (100% / 3));
+	}
+
+	.image3,
+	.image4 {
+		width:calc(100% / 2);
+	}
+}
+
+.gallery7 {
+	@extend .gallery;
+
+	.images {
+		@extend .images-preset;
+		width:100%;
+		height:400px;
+	}
+}
+
+// FOOTER
+
+footer {
+	background: $mainColor;
+	color:white;
+	padding:25px 0;
+	.credits{
+		width:80%;
+		margin:0 auto;
+		text-align: center;
+	}
+}
+
+
+
+////////////////////
+//
+// MEDIA QUERIES
+//
+////////////////////
+
+@media (max-width: 940px) {
+
+}
+
+@media (max-width: 768px) {
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-family: 'Unica One', cursive;
+	text-transform: uppercase;
+	font-size: 1.8rem;
+}
+
+.wrapper {
+	padding:25px;
+}
+
+// SECTION: Examples
+
+	section.examples {
+		top: -50px;
+	
+		flex-flow: column wrap;
+
+		.grid-sample {
+			width:50%;
+			margin:0 auto;
+			}
+
+		.grid-description {
+			width:100%;
+			margin:0 auto;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	header {
+		padding:100px 25px 100px 25px;
+		height:auto;
+	}
+
+	button .fa {
+		font-size: 2rem;
+	}
+
+	.previous {
+		top:15%;
+		left:25px;
+
+	}
+
+	.next {
+		top:15%;
+		right:25px;
+	}
+
+}
+
+@media (max-width: 320px) {
+
+}

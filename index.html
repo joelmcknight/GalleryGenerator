@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- STYLE SHEETS -->
+	<link rel="stylesheet" href="styles/style.css">
+
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	
+
+	<!-- GOOGLE FONTS -->	
+	<!-- font-family: 'Unica One', cursive; -->
+	<link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+
+	<!-- font-family: 'Vollkorn', serif; -->
+	<link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+
+	
+
+
+	<title>CSS Gallery Grid Styles</title>
+</head>
+<body>
+
+<header>
+
+<h1>CSS Gallery Grid Styles</h1>
+<h2>Create beautiful galleries with the click of a button.</h2>
+
+</header>
+
+<section class="examples wrapper">
+	<figure class="grid-sample">
+		<img id="grid-sample" src="images/grid_example1.png" alt="Grid Example">
+	</figure>
+	<article class="grid-description">
+		<h3>Example 1</h3>
+		<code class="sample">
+<xmp id="code-snippet" class="xmp"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Gallery Grid Style 1</title>
+</head>
+<body>
+    <div id="gallery" class="gallery1 clearfix">
+        <div class="images image1"></div>
+        <div class="images image2"></div>
+        <div class="images image3"></div>
+        <div class="images image4"></div>
+        <div class="images image5"></div>
+        <div class="images image6"></div>
+        <div class="images image7"></div>
+        <div class="images image8"></div>
+        <div class="images image9"></div>
+    </div>
+</body>
+</html>
+
+/// PUT THIS IN YOUR CSS STYLE SHEET ///
+	.gallery1 {
+	    width:100%;
+	    height:auto;
+	    background:$mainColor;
+	    padding:25px;
+	}
+	.gallery1 img {
+	    max-width: 100%;
+	}
+	.gallery1 .images {
+	    background:url("http://unsplash.it/1000/1000/?random");
+	    background-size: cover;
+	    background-position: center;
+	    border:1px solid white;
+	    float: left;
+	    width:calc(100% / 3);
+	    height:250px;
+	}
+/// END CSS STYLING ///</xmp>
+		</code>
+		<button class="demonstrate">Show Example</button>
+		<button class="copy-code" data-clipboard-target="#code-snippet">Copy CSS to Clipboard</button>
+		<button class="previous"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+		<button class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+	</article>
+</section>
+
+<section class="demonstration" id="demonstration">
+	<h3>Example 1</h3>
+	<article id="gallery" class="gallery1 clearfix">
+		<figure class="images image1"></figure>
+		<figure class="images image2"></figure>
+		<figure class="images image3"></figure>
+		<figure class="images image4"></figure>
+		<figure class="images image5"></figure>
+		<figure class="images image6"></figure>
+		<figure class="images image7"></figure>
+		<figure class="images image8"></figure>
+		<figure class="images image9"></figure>
+	</article>
+</section>
+
+<footer>
+	<article class="credits">
+		<p>Designed and developed by <a href="http://jfong.design/" target="blank">Johnathan Fong</a> &amp; <a href="http://joelmcknight.com/" target="_blank">Joel McKnight</a> | Images courtesy of <a href="http://unsplash.it" target="_blank">Unsplash It</a> | Pattern courtesy of <a href="http://subtlepatterns.com/japanese-sayagata/" target="_blank">Subtle Patterns</a></p>
+	</article>
+</footer>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js
+"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>	
