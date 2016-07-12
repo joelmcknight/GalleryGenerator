@@ -275,11 +275,47 @@ section.examples .grid-sample {
   width: 40%;
   margin-right: 25px;
   padding: 10px;
+  position: relative;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+section.examples .grid-sample .animate {
+  -webkit-animation-name: slide;
+          animation-name: slide;
 }
 
 section.examples .grid-sample img {
   display: block;
   max-width: 100%;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    background-color: yellow;
+    left: 1000px;
+    top: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    background-color: yellow;
+    left: 1000px;
+    top: 0px;
+    opacity: 0;
+  }
 }
 
 section.examples .grid-description {

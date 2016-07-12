@@ -102,9 +102,19 @@ section.examples {
 		width:40%;
 		margin-right: 25px;
 		padding: 10px;
+		position: relative;
+    	animation-duration: 2s;
+    	.animate {
+    		animation-name: slide;
+    	}
 		img {
 			display: block;
 			max-width: 100%;
+		}
+		@keyframes slide {
+		    0%   {background-color:red; left:0px; top:0px;}
+		    100%  {background-color:yellow; left:1000px; top:0px; opacity:0;}
+		    
 		}
 	}
 

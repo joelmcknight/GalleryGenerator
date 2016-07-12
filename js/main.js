@@ -91,33 +91,95 @@ $(function() {
 	var galleryCounter = 0;
 
 	$('.next').on("click", function(){
-		galleryCounter ++;
-		if(galleryCounter === 7){
-			galleryCounter = 0;
-		};
-		$("#gallery").removeClass("gallery" + galleryCounter).addClass("gallery" + (galleryCounter + 1) );
-		console.log("test");
-		if(galleryCounter === 0) {
-			$("#gallery").removeClass("gallery7").addClass("gallery1");
-		};
-		console.log(galleryCounter);
-		information();
+        
+            // $(".grid-sample").addClass("animate");
+            // $(".animate").css("animation-name", "slide");
+
+            // setTimeout(function() {
+            //         $(".grid-sample").removeClass("animate");
+            //         $(".animate").css("animation-name", "none");
+                   
+            //    }, 500);
+
+        //greensock below
+        // var $grid-sample = $('#grid-sample');
+        var tl = new TimelineLite();
+
+        tl.to($('#grid-sample'), 0.5, {x:600, opacity: 0})
+          .fromTo($('#grid-sample'), 0.5, 
+            {x:-1200, opacity: 0, immediateRender: false, delay: 0.2},
+            {x:0, opacity: 1}
+            );
+
+
+        // TweenMax.to($('#grid-sample'), 1, {
+        //     x:600,
+        //     opacity: 0
+            
+        // });
+
+        // TweenMax.from($('#grid-sample'), 1, {
+        //     x:-600,
+        //     opacity: 0,
+        //     delay: 1,
+        //     immediateRender: false
+        // });
+
+        //greensock end
+
+        setTimeout(function() {
+                //content
+               
+                galleryCounter ++;
+                if(galleryCounter === 7){
+                    galleryCounter = 0;
+                };
+
+
+                
+                     
+                
+                $("#gallery").removeClass("gallery" + galleryCounter).addClass("gallery" + (galleryCounter + 1) );
+                console.log("test");
+                if(galleryCounter === 0) {
+                    $("#gallery").removeClass("gallery7").addClass("gallery1");
+                };
+                console.log(galleryCounter);
+                information();
+
+           }, 500);
 
 	});
 
 	$('.previous').on("click", function(){
-		galleryCounter --;
-		if(galleryCounter === -1){
-			galleryCounter = 6;
-		};
 
-		$("#gallery").removeClass("gallery" + (galleryCounter + 2)).addClass("gallery" + (galleryCounter + 1));
-		console.log("test");
-		if(galleryCounter === 6) {
-			$("#gallery").removeClass("gallery1").addClass("gallery7");
-		};
-		console.log(galleryCounter);
-		information();
+        //Greensock here
+        var tl = new TimelineLite();
+
+        tl.to($('#grid-sample'), 0.5, {x:-600, opacity: 0})
+          .fromTo($('#grid-sample'), 0.5, 
+            {x:1200, opacity: 0, immediateRender: false, delay: 0.2},
+            {x:0, opacity: 1}
+            );
+          //greensock end
+
+        setTimeout(function() {
+                //content
+
+    		galleryCounter --;
+    		if(galleryCounter === -1){
+    			galleryCounter = 6;
+    		};
+
+    		$("#gallery").removeClass("gallery" + (galleryCounter + 2)).addClass("gallery" + (galleryCounter + 1));
+    		console.log("test");
+    		if(galleryCounter === 6) {
+    			$("#gallery").removeClass("gallery1").addClass("gallery7");
+    		};
+    		console.log(galleryCounter);
+    		information();
+
+        }, 500);
 
 	});
 });
